@@ -167,7 +167,8 @@ body {
 
 .hero-subtitle {
   font-size: 1.25rem;
-  color: var(--muted-foreground);
+  color: #000000;
+  /* color: var(--muted-foreground); */
   margin-bottom: 2rem;
   line-height: 1.6;
 }
@@ -622,7 +623,8 @@ body {
   }
 
   .hero-image::after {
-    background: rgba(255, 255, 255, 0.9);
+    /* background: rgba(255, 255, 255, 0.9); */
+    background: rgba(255, 255, 255, 0.6);
   }
 }
 
