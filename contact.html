@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - HEXA POWER SOLUTIONS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">HEXA POWER SOLUTIONS</a>
+                <nav class="nav">
+                    <a href="index.html#services" class="nav-link">Services</a>
+                    <a href="index.html#about" class="nav-link">About</a>
+                    <a href="index.html#rebates" class="nav-link">Rebates</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </nav>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html#services" class="mobile-nav-link">Services</a>
+        <a href="index.html#about" class="mobile-nav-link">About</a>
+        <a href="index.html#rebates" class="mobile-nav-link">Rebates</a>
+        <a href="contact.html" class="mobile-nav-link">Contact</a>
+    </div>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-header">
+                <h1 class="section-title">Get Your Free Quote</h1>
+                <p class="section-subtitle">Fill out the form below and our team will get in touch with you soon to discuss your energy upgrade needs.</p>
+            </div>
+
+            <div class="contact-content">
+                <form id="contactForm" class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name *</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name *</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Address *</label>
+                        <input type="text" id="address" name="address" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Description (Optional)</label>
+                        <textarea id="description" name="description" rows="4" placeholder="Tell us about your energy upgrade needs..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-full">Submit</button>
+                </form>
+
+                <div id="thankYouMessage" class="thank-you-message" style="display: none;">
+                    <div class="thank-you-content">
+                        <div class="thank-you-icon">✓</div>
+                        <h2>Thank You!</h2>
+                        <p>Our team will get in touch with you soon.</p>
+                        <a href="index.html" class="btn btn-secondary">Back to Home</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>HEXA POWER SOLUTIONS</h3>
+                    <p>Your trusted partner for Victorian energy upgrades in Mulgrave and surrounding areas.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#rebates">Rebates</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#services">Air Conditioning</a></li>
+                        <li><a href="index.html#services">Heat Pumps</a></li>
+                        <li><a href="index.html#services">Solar Panels</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Mulgrave, Victoria<br>Australia</p>
+                    <a href="contact.html" class="btn btn-secondary">Get in Touch</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 HEXA POWER SOLUTIONS. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
