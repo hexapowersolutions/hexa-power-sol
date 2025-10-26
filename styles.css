@@ -152,7 +152,7 @@ body {
 
 .hero-content {
   position: relative;
-  max-width: 600px;
+  /* max-width: 600px; */
   z-index: 1;
 }
 
