@@ -61,6 +61,21 @@ if (contactForm) {
     // Get this from: Extensions > Apps Script > Deploy > New deployment > Web app
     const scriptURL = 'https://script.google.com/macros/s/AKfycbwBHIv4MFDH_VV-8kHk-qYS6enBjOLqOGbHSOZ7L9cKVuGHlbcKtSMZ-yd8Q1GxvkvHqw/exec';
 
+    // Fail loudly if the URL was never set — this is a common cause of
+    // "nothing happens" with no clear error
+    if (!scriptURL || scriptURL === 'PASTE_YOUR_WEB_APP_URL_HERE') {
+      console.error('Contact form: scriptURL has not been set. Paste your Apps Script Web App URL into script.js.');
+      alert('Form is not fully configured yet. Please contact us by phone or email instead.');
+      return;
+    }
+
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+    const originalBtnText = submitBtn ? submitBtn.textContent : null;
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Submitting...';
+    }
+
     // Get form data
     const formData = new FormData(contactForm);
 
@@ -69,20 +84,44 @@ if (contactForm) {
       method: 'POST',
       body: formData
     })
-    .then(response => response.json())
-    .then(result => {
+    .then(response => {
+      // Log raw status so real failures (redirects, 4xx/5xx, HTML error
+      // pages from a misconfigured deployment) are visible in the console
+      console.log('Apps Script response status:', response.status, response.type);
+      return response.text();
+    })
+    .then(text => {
+      console.log('Apps Script raw response:', text);
+      let result;
+      try {
+        result = JSON.parse(text);
+      } catch (parseErr) {
+        // The response wasn't JSON — almost always means the Apps Script
+        // deployment is misconfigured (e.g. "Who has access" isn't set to
+        // "Anyone"), so Google returned a login/error page instead of our
+        // doPost() output.
+        throw new Error('Server did not return valid JSON. Check the Apps Script deployment settings (Who has access must be "Anyone").');
+      }
+
       if (result.result === 'success') {
         // Hide form and show thank you message
         contactForm.style.display = "none";
         thankYouMessage.style.display = "block";
         thankYouMessage.scrollIntoView({ behavior: "smooth", block: "center" });
       } else {
+        console.error('Apps Script returned an error result:', result);
         alert('There was an error submitting the form. Please try again.');
       }
     })
     .catch(error => {
-      console.error('Error:', error);
-      alert('There was an error submitting the form. Please try again.');
+      console.error('Contact form submission failed:', error);
+      alert('There was an error submitting the form. Please try again, or contact us by phone/email.');
+    })
+    .finally(() => {
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalBtnText;
+      }
     });
   })
 }
