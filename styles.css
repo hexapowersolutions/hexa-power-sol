@@ -44,12 +44,24 @@ body {
   align-items: center;
 }
 
-.logo {
+/* .logo {
   font-size: 1.25rem;
   font-weight: 700;
   color: var(--primary);
   text-decoration: none;
   letter-spacing: -0.02em;
+} */
+ .logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  height: 80px; /* controls the header logo's max height */
+}
+
+.logo img {
+  height: 100%;
+  width: auto;
+  display: block;
 }
 
 .nav {
