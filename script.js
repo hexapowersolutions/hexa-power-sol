@@ -50,36 +50,6 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 })
 
 // Contact Form Submission
-// const contactForm = document.getElementById("contactForm")
-// const thankYouMessage = document.getElementById("thankYouMessage")
-
-// if (contactForm) {
-//   contactForm.addEventListener("submit", (e) => {
-//     e.preventDefault()
-
-//     // Get form data
-//     const formData = {
-//       firstName: document.getElementById("firstName").value,
-//       lastName: document.getElementById("lastName").value,
-//       email: document.getElementById("email").value,
-//       phone: document.getElementById("phone").value,
-//       address: document.getElementById("address").value,
-//       description: document.getElementById("description").value,
-//     }
-
-//     // Log form data (in production, you would send this to a server)
-//     console.log("Form submitted:", formData)
-
-//     // Hide form and show thank you message
-//     contactForm.style.display = "none"
-//     thankYouMessage.style.display = "block"
-
-//     // Scroll to top of thank you message
-//     thankYouMessage.scrollIntoView({ behavior: "smooth", block: "center" })
-//   })
-// }
-
-// Contact Form Submission
 const contactForm = document.getElementById("contactForm")
 const thankYouMessage = document.getElementById("thankYouMessage")
 
@@ -87,8 +57,9 @@ if (contactForm) {
   contactForm.addEventListener("submit", (e) => {
     e.preventDefault()
 
-    // Replace with your Google Apps Script Web app URL
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbwBHIv4MFDH_VV-8kHk-qYS6enBjOLqOGbHSOZ7L9cKVuGHlbcKtSMZ-yd8Q1GxvkvHqw/exec';  // Paste your URL here
+    // ⚠️ PASTE YOUR OWN GOOGLE APPS SCRIPT WEB APP URL BELOW
+    // Get this from: Extensions > Apps Script > Deploy > New deployment > Web app
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwBHIv4MFDH_VV-8kHk-qYS6enBjOLqOGbHSOZ7L9cKVuGHlbcKtSMZ-yd8Q1GxvkvHqw/exec';
 
     // Get form data
     const formData = new FormData(contactForm);
