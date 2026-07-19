@@ -88,7 +88,7 @@ if (contactForm) {
     e.preventDefault()
 
     // Replace with your Google Apps Script Web app URL
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbzVyhe_RPX5TAciDPDdr_v44ntOJyL9aEsm-H3nntPlvJduVZHMOU6sTTxOOOh77WYHbw/exec';  // Paste your URL here
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwBHIv4MFDH_VV-8kHk-qYS6enBjOLqOGbHSOZ7L9cKVuGHlbcKtSMZ-yd8Q1GxvkvHqw/exec';  // Paste your URL here
 
     // Get form data
     const formData = new FormData(contactForm);
